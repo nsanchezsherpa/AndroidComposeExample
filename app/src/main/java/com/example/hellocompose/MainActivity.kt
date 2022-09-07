@@ -1,5 +1,6 @@
 package com.example.hellocompose
 
+import android.content.res.Configuration
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -16,7 +17,20 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Text("Hola Compose! :(")
+            HelloCompose()
         }
     }
+}
+
+@Composable
+fun HelloCompose() {
+    Text(text = "Hello Compose :)")
+}
+
+@Preview(
+    showBackground = true
+)
+@Composable
+fun HelloComposePreview(){
+    HelloCompose()
 }
