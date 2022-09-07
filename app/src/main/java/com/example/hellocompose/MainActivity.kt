@@ -25,7 +25,9 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            HelloCompose()
+            HelloComposeTheme {
+                HelloCompose()
+            }
         }
     }
 }
@@ -34,7 +36,7 @@ class MainActivity : ComponentActivity() {
 fun HelloCompose() {
     Card (
         elevation = 4.dp,
-        shape = RoundedCornerShape(20.dp),
+        shape = MaterialTheme.shapes.small,
         modifier = Modifier.padding(4.dp)
     ) {
         Column (
@@ -67,5 +69,7 @@ fun HelloCompose() {
 )
 @Composable
 fun HelloComposePreview(){
-    HelloCompose()
+    HelloComposeTheme {
+        HelloCompose()
+    }
 }
